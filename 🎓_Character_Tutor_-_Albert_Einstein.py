@@ -5,8 +5,8 @@ import streamlit as st
 import os
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
-# OPENAI_API_KEY = st.secrets['openai-api-key']
+# OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+OPENAI_API_KEY = st.secrets['openai-api-key']
 
 
 class StreamHandler(BaseCallbackHandler):
