@@ -21,7 +21,7 @@ class StreamHandler(BaseCallbackHandler):
 
 st.set_page_config(
     page_title="Character Tutor - Albert Einstein",
-    page_icon="curio.png"  # Provide the path to your favicon image file
+    page_icon="eins.png"  # Provide the path to your favicon image file
 )
 
 
@@ -52,7 +52,7 @@ for msg in st.session_state.messages3:
 if prompt := st.chat_input():
     st.session_state.messages3.append(ChatMessage(role="user", content=prompt))
     st.chat_message("user").write(prompt)
-    with st.chat_message("assistant", avatar="Newton.png"):
+    with st.chat_message("assistant", avatar="eins.png"):
         stream_handler = StreamHandler(st.empty())
         llm = ChatOpenAI(model_name= 'gpt-4', temperature=0.5, openai_api_key=OPENAI_API_KEY, streaming=True, callbacks=[stream_handler])
         converted_message = []
